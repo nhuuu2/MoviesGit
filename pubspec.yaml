@@ -67,6 +67,8 @@ flutter:
     - assets/OIP.jpeg
     - assets/round-tiktok3350.logowik.com.webp
     - assets/idesign_logogg_1.jpg
+    - assets/Screenshot 2024-11-27 200921.png
+    - assets/Screenshot 2024-11-28 081623.png
   #   - images/a_dot_ham.jpeg
 
   #An image asset can refer to one or more resolution-specific "variants", see
@@ -98,3 +100,7 @@ flutter:
      - family: HighlandGothicFLF
        fonts:
         - asset: assets/fonts/HighlandGothicFLF.ttf
+
+     - family: Puling
+       fonts:
+        - asset: assets/fonts/Pulang.ttf

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'screen2.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
@@ -104,7 +105,7 @@ class Screen1 extends StatelessWidget {
 
         const SizedBox(height: 10),
           ElevatedButton(onPressed: (){
-
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const Screen2()));
           },
           style: TextButton.styleFrom(
             foregroundColor: Colors.black,
