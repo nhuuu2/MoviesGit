@@ -1,197 +1,260 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'screen2.dart';
+import 'package:read_more_text/read_more_text.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      backgroundColor: Colors.white,
-    body: Padding(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const SizedBox(height: 40),
-        Image.asset(
-          'assets/Screenshot 2024-11-18 085853.png',
-          height: 140,
-        ),
-
-        const SizedBox(height: 10),
-        Text('Account Login',style: TextStyle(
-          fontWeight: FontWeight.bold, fontSize: 30, color: Colors.blue[900],
-          fontFamily: 'HighlandGothicFLF'
-        ),),
-
-        const SizedBox(height: 5),
-        const Text('Enter your email and password in the provided fields',style:
-          TextStyle(fontSize: 17, color: Colors.black38),
-          textAlign: TextAlign.center,),
-
-        const SizedBox(height: 20),
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            'Email',
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-
-        const SizedBox(height: 5),
-        TextField(
-          decoration: InputDecoration(
-            labelText: 'Enter your Email',
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20)
-            ),
-            filled: true,
-            fillColor: const Color(0xFFF5F5F5),
-          ),
-        ),
-        const SizedBox(height: 20),
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            'Password',style:
-            TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ),
-
-
-        const SizedBox(height: 5),
-        TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            labelText: 'Enter your password',
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20)
-            ),
-            filled: true,
-            fillColor: const Color(0xFFF5F5F5),
-          ),
-        ),
-
-        const SizedBox(height: 5),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      backgroundColor: const Color(0xFF1C1C27),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-              Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-              const Text('Stay signed in',
-                style:
-                TextStyle( fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-
-            ],
-          ),
-          TextButton(onPressed: (){},
-              child: const Text('Forgot password?',
-                style:
-              TextStyle( fontSize: 16,fontWeight: FontWeight.bold, color: Colors.black,
-              decoration: TextDecoration.underline),)),
-      ],
-      ),
-
-        const SizedBox(height: 10),
-          ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const Screen2()));
-          },
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.yellow,
-            padding: const EdgeInsets.fromLTRB(150, 10, 150, 10),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30)
-            ),
-          ),
-              child: const Text('Login', style:
-          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
-      ),
-
-        const SizedBox(height: 10),
-        const Row(
-          children: [
-            Expanded(child: Divider(color: Colors.black26,)),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text('or continue with', style: TextStyle(color: Colors.black38),),),
-            Expanded(child: Divider(color: Colors.black26,))
-          ],
-        ),
-
-        const SizedBox(height: 10),
-           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.amber, width: 1),
-                  borderRadius: BorderRadius.circular(8.0)
-                ),
-                child: Image.asset('assets/idesign_logogg_1.jpg', width: 50, height: 50),
-              ),
-
-              const SizedBox(width: 10),
-              Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.amber, width: 1),
-                      borderRadius: BorderRadius.circular(8.0)
+            Container(
+              width: double.infinity,
+              height: 250,
+              child: Stack(
+                alignment: Alignment.bottomLeft,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.network(
+                      'https://th.bing.com/th/id/OIP.R35np8C9IUkx_W68z5oazgHaEK?rs=1&pid=ImgDetMain',
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: 250,
+                    ),
                   ),
-                child: Image.asset('assets/OIP.jpeg', width: 50, height: 50),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Icon(
+                      Icons.play_circle_filled_rounded,
+                      color: Colors.red[200],
+                      size: 50,
+                    ),
+                  )
+                ],
               ),
 
-              const SizedBox(width: 10),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.amber, width: 1),
-                    borderRadius: BorderRadius.circular(8.0)
+            ),
+            const SizedBox(height: 10),
+            Padding(padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Stars Wars: The last Jedi',style:
+                  TextStyle(
+                      color: Colors.white,
+                      fontSize: 24
+                  ),
+                  ),
                 ),
-                child: Image.asset('assets/3.webp',width: 50, height: 50),
-              ),
 
-              const SizedBox(width: 10),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.amber, width: 1),
-                    borderRadius: BorderRadius.circular(8.0)
+                const SizedBox(height: 10),
+                const Row(
+                  children: [
+                    Icon(
+                      Icons.access_time,
+                      color: Colors.white60,
+                      size: 16,
+                    ),
+                    SizedBox(width: 5),
+                    Text('152 minutes',style:
+                    TextStyle(color: Colors.white60,fontSize: 14),),
+                    SizedBox(width: 20),
+                    Icon(
+                      Icons.star,
+                      color: Colors.white60,
+                      size: 16,
+                    ),
+                    SizedBox(width: 5),
+                    Text('7.0 JMDb',style:
+                    TextStyle(color: Colors.white60,fontSize: 14),)
+                  ],
                 ),
-                child:  Image.asset('assets/round-tiktok3350.logowik.com.webp',width: 50, height: 50),
-              ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Release date',style:
+                        TextStyle(color: Colors.white,fontSize: 18),),
+                        SizedBox(height: 5,),
+                        Text('December 9, 2017',style:
+                        TextStyle(color: Colors.white60,fontSize: 14),)
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Genre',style:
+                        TextStyle(color: Colors.white,fontSize: 18),),
+                        const SizedBox(height: 5),
+                        Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 4.0,vertical: 4.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  border: Border.all(
+                                      width: 2,
+                                      color: Colors.white60
+                                  )
+                              ),
+                              child: const Text('Action',style:
+                              TextStyle(color: Colors.white60,fontSize: 14),),
+                            ),
+                            const SizedBox(width: 6),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 4.0,vertical: 4.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  border: Border.all(
+                                      width: 2,
+                                      color: Colors.white60
+                                  )
+                              ),
+                              child: const Text('Sic-fi',style:
+                              TextStyle(color: Colors.white60,fontSize: 14),),
+                            )
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                const SizedBox(height: 10),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Synopsis',style:
+                  TextStyle(color: Colors.white,fontSize: 20),),
+                ),
+                const SizedBox(height: 3),
+                const ReadMoreText(
+                  'Rey(Daisy Ridley) finally manages to find the legendary Jedi kight.'
+                      'Luke Skywalker (Mark Hamill) on an island with a magical aura.'
+                      'The heroes of The Force Awakens including Leia. Finn has seen '
+                      'them and balablabla heheh hahaa haoihefwoaei',
+                  style: TextStyle(
+                      color: Colors.white60,
+                      fontSize: 14,
+                      height: 1.5
+                  ),
+                  numLines: 3,
+                  readMoreText: 'Read more',
+                  readLessText: 'Read less',
+                ),
+                const SizedBox(height: 10),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Related movies',style:
+                  TextStyle(color: Colors.white,fontSize: 20),),
+                ),
+                const SizedBox(height: 5),
+                CarouselSlider(
+                    items: [
+                      Container(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(16.0),
+                              child: Image.asset('assets/starwars.jpeg',
+                                height: 150,
+                                width: double.infinity,
+                                fit: BoxFit.cover,),
+                            ),
+                            Positioned(
+                              bottom: 10, right: 10, left: 10,
+                                child: Container(
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: const Text('Star Wars: the rise of the skywalker',style:
+                                  TextStyle(color: Colors.white, fontSize: 16),),
+                            )),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(16.0),
+                              child: Image.asset('assets/starwars.jpeg',
+                                height: 150,
+                                width: double.infinity,
+                                fit: BoxFit.cover,),
+                            ),
+                            Positioned(
+                                bottom: 10, right: 10, left: 10,
+                                child: Container(
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: const Text('Star Wars: the rise of the skywalker',style:
+                                  TextStyle(color: Colors.white, fontSize: 16),),
+                                )),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(16.0),
+                              child: Image.asset('assets/starwars.jpeg',
+                                height: 150,
+                                width: double.infinity,
+                                fit: BoxFit.cover,),
+                            ),
+                            Positioned(
+                                bottom: 10, right: 10, left: 10,
+                                child: Container(
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: const Text('Star Wars: the rise of the skywalker',style:
+                                  TextStyle(color: Colors.white, fontSize: 16),),
+                                )),
+                          ],
+                        ),
+                      )
+                    ],
+                    options: CarouselOptions(
+                      height: 170,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: true,
+                      autoPlay: false,)
 
-            ],
-          ),
+                )
+              ],
+            )
 
-
-        const SizedBox(height: 5),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("Don't have an account?"),
-            TextButton(onPressed: (){
-
-            },
-                child: Text('Register', style:
-                  TextStyle(color: Colors.yellow[900]),))
+            )
           ],
         ),
-
-      ]
-    ),
-    ),
+      ),
     );
   }
-
-  void setState(Null Function() param0) {}
-
-
 }
